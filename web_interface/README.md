@@ -34,3 +34,16 @@ Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework 
 ## Copyright and License
 
 Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2/blob/gh-pages/LICENSE) license.
+
+
+## TO RUN
+
+```
+bower install
+npm install
+git clone https://github.com/fperucic/treant-js.git
+cd treant-js
+npm-install
+cd ..
+cp -r treant-js bower_components
+```
