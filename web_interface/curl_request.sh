@@ -1,0 +1,1 @@
+curl --data "sentence=hi how are you" --data "last_DAtag=greet" http://passidin10.science.unitn.it:5000/generate_USR
