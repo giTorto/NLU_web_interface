@@ -213,7 +213,8 @@ function showCommFunc(comm_func)
 }
 function showQualifier(key_value,q)
 {
-    console.log("showing qulifier")
+    console.log("showing qualifier");
+    console.log("ha");
 
     qualifiers={}
     qualifiers["subjIT"]={id:"subjIT",panel:"panel-primary",icon:"fa-comments",type:"Subjective InfoType"}
