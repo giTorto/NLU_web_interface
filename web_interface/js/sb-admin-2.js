@@ -220,7 +220,7 @@ function showQualifier(q)
     qualifiers["func"]={id:"func",panel:"panel-primary",icon:"fa-gears",type:"Functionality"}
     qualifiers["factIT"]={id:"factIT",panel:"panel-primary",icon:"fa-comment",type:"Factual InfoType"}
     qualifiers["sentiment"]={id:"sentiment",panel:"panel-primary",icon:"fa-smile-o",type:"Sentiment"}
-    $(qualifiers).each(function(q) {
+    $(qualifiers).each(function(i,q) {
         console.log(q)
         qualifier = qualifiers[q.type]
         qualifier["value"] = q.value
