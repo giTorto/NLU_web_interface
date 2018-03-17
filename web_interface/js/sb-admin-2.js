@@ -176,11 +176,7 @@ function parseSentence(){
     console.log("Parse sentence has been called");
 
     $.post(//"http://passidin10.science.unitn.it:5000/generate_USR",
-        "http://sisl-nlu.disi.unitn.it/parse_USR",
-        {
-            sentence: $('#form_text_to_pass').val(),
-            last_DAtag: "Greet"
-        },
+        "http://sisl-nlu.disi.unitn.it/parse_USR"+'?'+'sentence='+$('#form_text_to_pass').val(),
         function(data){
             console.log(data);
             //alert("Data: " + data );
