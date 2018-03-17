@@ -249,7 +249,7 @@ $("#formParse").submit(function(e){
     //$.get(server,function(){
     console.log("Submit has been called");
 
-    $.post("http://passidin10.science.unitn.it:5000/generate_USR",
+    $.get("http://passidin10.science.unitn.it:5000/generate_USR",
         {
         sentence: text,
         last_DAtag: "Greet"
