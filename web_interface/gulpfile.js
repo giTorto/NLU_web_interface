@@ -171,13 +171,7 @@ gulp.task('webserver', function() {
 });
 
 
-// Dev task with browserSync
-gulp.task('dev', ['bower','copy','useref', 'less', 'minify-css', 'js', 'minify-js','browserSync'], function() {
-    gulp.watch('less/*.less', ['less']);
-    gulp.watch('dist/css/*.css', ['minify-css']);
-    gulp.watch('js/*.js', ['minify-js']);
-    // Reloads the browser whenever HTML or JS files change
-});
+
 
 
 // Run everything
