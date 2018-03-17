@@ -139,8 +139,8 @@ function sayHello(request, response) {
 function mockApi(response, path_name, params, next) {
     console.log(path_name);
     console.log(params);
-    var options = url.parse('http://backend.api/api');
-    options.route = '/api';
+    var options = url.parse('http://sisl-nlu.disi.unitn.it/');
+    options.route = path_name;
     return proxy(options);
 
 
