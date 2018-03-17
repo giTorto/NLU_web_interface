@@ -174,9 +174,10 @@ current_units=[]
 
 function parseSentence(){
     console.log("Parse sentence has been called");
+
     $.post("http://passidin10.science.unitn.it:5000/generate_USR",
         {
-            sentence: text,
+            sentence: $('#form_text_to_pass').val(),
             last_DAtag: "Greet"
         },
         function(data){
