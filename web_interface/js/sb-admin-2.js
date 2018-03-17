@@ -214,8 +214,7 @@ function showCommFunc(comm_func)
 function showQualifier(key_value,q)
 {
     console.log("showing qualifier");
-
-    qualifiers={};
+    var qualifiers = {};
     qualifiers["subjIT"]={id:"subjIT",panel:"panel-primary",icon:"fa-comments",type:"Subjective InfoType"};
     qualifiers["func"]={id:"func",panel:"panel-primary",icon:"fa-gears",type:"Functionality"};
     qualifiers["factIT"]={id:"factIT",panel:"panel-primary",icon:"fa-comment",type:"Factual InfoType"};
@@ -231,6 +230,8 @@ function showQualifier(key_value,q)
         }else if (key_value === 'IT_type'){
             key_value = 'subjIT'
         }
+        var qualifier = '';
+        var qualifierDIV = '';
         qualifier = qualifiers[key_value];
         qualifier["value"] = q.tag;
         qualifierDIV = $(build_qualifier(qualifier));
