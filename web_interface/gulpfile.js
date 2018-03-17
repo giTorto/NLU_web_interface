@@ -36,9 +36,6 @@ gulp.task('minify-css', ['less'], function() {
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('dist/css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
 });
 
 // Copy JS to dist
