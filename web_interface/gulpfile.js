@@ -151,7 +151,7 @@ gulp.task('webserver', function() {
             directoryListing: false,
             open: false,
             port: 3000,
-            path: 'dist'
+            fallback: 'index.html'
         }));
 });
 
@@ -171,12 +171,4 @@ gulp.task('dev', ['bower','copy','useref', 'less', 'minify-css', 'js', 'minify-j
 
 // Run everything
 gulp.task('default', ['bower','copy','useref', 'less', 'minify-css', 'js', 'minify-js','webserver'], function() {
-    gulp.watch('less/*.less', ['less']);
-    gulp.watch('dist/css/*.css', ['minify-css']);
-    gulp.watch('js/*.js', ['minify-js']);
-    // Reloads the browser whenever HTML or JS files change
-    gulp.watch('dist/*.html', browserSync.reload);
-    gulp.watch('dist/js/*.js', browserSync.reload);
-    gulp.watch('dist/vendor/**/*.js', browserSync.reload);
-    gulp.watch('dist/vendor/**/*.css', browserSync.reload);
 });
