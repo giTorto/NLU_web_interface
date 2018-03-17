@@ -229,7 +229,7 @@ function showUnit(index)
 {
     console.log("showing unit");
     console.log(index);
-    console.log(current_units[index])
+    console.log(current_units['utterances'][index])
 
     $("#result-wrapper").fadeIn();
     //1) Show communicative function
