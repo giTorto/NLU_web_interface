@@ -214,19 +214,18 @@ function showCommFunc(comm_func)
 function showQualifier(key_value,q)
 {
     console.log("showing qualifier");
-    console.log("ha");
 
-    qualifiers={}
-    qualifiers["subjIT"]={id:"subjIT",panel:"panel-primary",icon:"fa-comments",type:"Subjective InfoType"}
-    qualifiers["func"]={id:"func",panel:"panel-primary",icon:"fa-gears",type:"Functionality"}
-    qualifiers["factIT"]={id:"factIT",panel:"panel-primary",icon:"fa-comment",type:"Factual InfoType"}
-    qualifiers["sentiment"]={id:"sentiment",panel:"panel-primary",icon:"fa-smile-o",type:"Sentiment"}
+    qualifiers={};
+    qualifiers["subjIT"]={id:"subjIT",panel:"panel-primary",icon:"fa-comments",type:"Subjective InfoType"};
+    qualifiers["func"]={id:"func",panel:"panel-primary",icon:"fa-gears",type:"Functionality"};
+    qualifiers["factIT"]={id:"factIT",panel:"panel-primary",icon:"fa-comment",type:"Factual InfoType"};
+    qualifiers["sentiment"]={id:"sentiment",panel:"panel-primary",icon:"fa-smile-o",type:"Sentiment"};
 
-    console.log(q)
-    if (key_value != 'DA_tag') {
-        qualifier = qualifiers[key]
-        qualifier["value"] = q.tag
-        qualifierDIV = $(build_qualifier(qualifier))
+    console.log(q);
+    if (key_value !== 'DA_tag') {
+        qualifier = qualifiers[key];
+        qualifier["value"] = q.tag;
+        qualifierDIV = $(build_qualifier(qualifier));
         $("#qualifier_row").append(qualifierDIV)
     }
 
