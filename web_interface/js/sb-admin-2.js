@@ -181,8 +181,8 @@ function parseSentence(){
         },
         function(data){
             console.log(data);
-            alert("Data: " + data );
-            $("#functionalUnits").fadeIn();
+            //alert("Data: " + data );
+            //$("#functionalUnits").fadeIn();
 
         });
 }
