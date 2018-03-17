@@ -165,7 +165,6 @@ gulp.task('webserver', function() {
                 var urlObj = url.parse(req.url, true),
                     method = req.method,
                     paramObj = urlObj.query;
-                console.log(req.url);
                 // Custom function to mock data
                 mockApi(res, urlObj.pathname, paramObj, next);
             }
