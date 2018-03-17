@@ -178,6 +178,7 @@ function parseSentence(){
             last_DAtag: "Greet"
         },
         function(data){
+            console.log(data)
             alert("Data: " + data );
         });
     $("#functionalUnits").fadeIn();
@@ -243,6 +244,7 @@ $("#formParse").submit(function(e){
     },
         function(data){
         alert("Data: " + data );
+        console.log(data)
         current_units=data;
         colors=["#87CEEB","rgb(33, 133, 208)"];
         $(data).each(function(i,e){
