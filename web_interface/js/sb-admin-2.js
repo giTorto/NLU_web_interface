@@ -230,10 +230,10 @@ function showUnit(index)
     $("#result-wrapper").fadeIn();
     //1) Show communicative function
     $("#collapsable-example").html("")
-    showCommFunc(current_units[index].comm_func)
+    showCommFunc(current_units[index]['intent']['DA_tag'])
     $("#qualifier_row").html("")
     //2) Show qualifiers
-    qualifiers=(current_units[index]["qualifiers"])
+    qualifiers=(current_units[index]["intent"])
     $(qualifiers).each(function(i,e){showQualifier(e);});
 }
 function showDetails(id){
