@@ -220,10 +220,13 @@ function showQualifier(q)
     qualifiers["func"]={id:"func",panel:"panel-primary",icon:"fa-gears",type:"Functionality"}
     qualifiers["factIT"]={id:"factIT",panel:"panel-primary",icon:"fa-comment",type:"Factual InfoType"}
     qualifiers["sentiment"]={id:"sentiment",panel:"panel-primary",icon:"fa-smile-o",type:"Sentiment"}
-    qualifier=qualifiers[q.type]
-    qualifier["value"]=q.value
-    qualifierDIV=$(build_qualifier(qualifier))
-    $("#qualifier_row").append(qualifierDIV)
+    $(qualifiers).each(function(q) {
+        console.log(q)
+        qualifier = qualifiers[q.type]
+        qualifier["value"] = q.value
+        qualifierDIV = $(build_qualifier(qualifier))
+        $("#qualifier_row").append(qualifierDIV)
+    })
 }
 function showUnit(index)
 {
