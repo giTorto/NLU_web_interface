@@ -179,10 +179,11 @@ function parseSentence(){
             last_DAtag: "Greet"
         },
         function(data){
-            console.log(data)
+            console.log(data);
             alert("Data: " + data );
+            $("#functionalUnits").fadeIn();
+
         });
-    $("#functionalUnits").fadeIn();
 }
 
 function showQuestion(){
