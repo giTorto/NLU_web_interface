@@ -222,7 +222,7 @@ function showQualifier(key_value,q)
 
     console.log(q);
     console.log(key_value);
-    if (key_value !== 'DA_tag') {
+    if (key_value !== 'DA_tag' && key_value !== 'tense') {
         if (key_value === 'qtype') {
             key_value = 'factIT'
         }else if (key_value === 'functionality'){
