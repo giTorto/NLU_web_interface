@@ -137,14 +137,11 @@ function sayHello(request, response) {
 }
 
 function mockApi(response, path_name, params, next) {
-    console.log(path_name);
-    console.log(params);
     if (path_name === '/parse_USR'){
         request.post({url:'http://passidin10.science.unitn.it:5000/generate_USR',
-            formData: {sentence: "how are you", last_DAtag: "Greet"}},
+            formData: {sentence: params[sentence], last_DAtag: "Greet"}},
             function optionalCallback(err, httpResponse, body) {
                 console.log("returned something")
-                console.log(err)
                 console.log(body)
         }
         );
