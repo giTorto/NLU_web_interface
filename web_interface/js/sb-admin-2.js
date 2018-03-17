@@ -222,6 +222,7 @@ function showQualifier(key_value,q)
     qualifiers["sentiment"]={id:"sentiment",panel:"panel-primary",icon:"fa-smile-o",type:"Sentiment"};
 
     console.log(q);
+    console.log(key_value);
     if (key_value !== 'DA_tag') {
         qualifier = qualifiers[key_value];
         qualifier["value"] = q.tag;
