@@ -150,7 +150,8 @@ gulp.task('webserver', function() {
             livereload: false,
             directoryListing: false,
             open: false,
-            port:3000
+            port: 3000,
+            path: 'dist'
         }));
 });
 
