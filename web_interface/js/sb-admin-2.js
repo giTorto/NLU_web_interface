@@ -211,7 +211,7 @@ function showCommFunc(comm_func)
     tree = new Treant( chart_config );
 
 }
-function showQualifier(q)
+function showQualifier(key_value,q)
 {
     console.log("showing qulifier")
 
@@ -222,10 +222,13 @@ function showQualifier(q)
     qualifiers["sentiment"]={id:"sentiment",panel:"panel-primary",icon:"fa-smile-o",type:"Sentiment"}
 
     console.log(q)
-    qualifier = qualifiers[q.type]
-    qualifier["value"] = q.value
-    qualifierDIV = $(build_qualifier(qualifier))
-    $("#qualifier_row").append(qualifierDIV)
+    if (key_value != 'DA_tag') {
+        qualifier = qualifiers[key]
+        qualifier["value"] = q.tag
+        qualifierDIV = $(build_qualifier(qualifier))
+        $("#qualifier_row").append(qualifierDIV)
+    }
+
 
 }
 function showUnit(index)
@@ -243,7 +246,7 @@ function showUnit(index)
     $("#qualifier_row").html("")
     //2) Show qualifiers
     qualifiers=(functional_unit["intent"])
-    $(qualifiers).each(function(i,e){showQualifier(e);});
+    Object.keys(dictionary).forEach(function(key) {showQualifier(key,dictionary[key]);};
 }
 function showDetails(id){
     console.log(id)
