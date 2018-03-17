@@ -176,6 +176,9 @@ function parseSentence(){
     console.log("Parse sentence has been called");
     current_units = []
     $("#fUnits").empty();
+    $("#qualifier_row").empty();
+    $("#result-wrapper").hide();
+
     $.getJSON(//"http://passidin10.science.unitn.it:5000/generate_USR",
         "http://sisl-nlu.disi.unitn.it/parse_USR"+'?'+'sentence='+$('#form_text_to_pass').val(),
         function(data){
