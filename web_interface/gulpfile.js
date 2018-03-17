@@ -113,7 +113,7 @@ gulp.task('copy', function() {
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
-            baseDir: '',
+            baseDir: './dist',
             index: "index.html"
         },
         browser: 'google chrome'
@@ -129,7 +129,7 @@ gulp.task('useref', function(){
 
 
 gulp.task('webserver', function() {
-    gulp.src('')
+    gulp.src('dist')
         .pipe(webserver({
             livereload: false,
             directoryListing: false,
