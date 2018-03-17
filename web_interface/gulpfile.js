@@ -139,7 +139,7 @@ function sayHello(request, response) {
 function mockApi(response, path_name, params, next) {
     console.log(path_name);
     console.log(params);
-    var options = url.parse('http://sisl-nlu.disi.unitn.it/');
+    var options = url.parse('http://localhost:3000');
     options.route = path_name;
     return proxy(options);
 
