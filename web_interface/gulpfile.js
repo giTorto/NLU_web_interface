@@ -14,8 +14,6 @@ var plugins  = require('gulp-load-plugins')();
 var url = require('url');
 var path = require('path');
 var proxy = require('proxy-middleware');
-var connect = require('connect');
-var express = require('express');
 
 
 
