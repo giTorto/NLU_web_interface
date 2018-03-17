@@ -183,7 +183,8 @@ function parseSentence(){
             $("#functionalUnits").fadeIn();
             colors=["#87CEEB","rgb(33, 133, 208)"];
             $(data.utterances).each(function(i,e){
-                fUnit=$("<span style=\"padding:25px;font-size:150%\"><b style=\"color:"+colors[i%2]+"; cursor: pointer\" onclick=\"showUnit("+i+")\">"+data[i]['final_utterance']+"</b></span> ");
+                console.log(e)
+                fUnit=$("<span style=\"padding:25px;font-size:150%\"><b style=\"color:"+colors[i%2]+"; cursor: pointer\" onclick=\"showUnit("+i+")\">"+ e['final_utterance']+"</b></span> ");
                 $("#fUnits").append(fUnit);
                 console.log(e.unit);
             });
