@@ -204,7 +204,7 @@ function showDirective(){
 }
 function showCommFunc(comm_func)
 {
-    tagsHTML={}
+    tagsHTML={};
     $(["Statement","Answer","SetQ","PropQ","ChoiceQ","Directive","Commissive"]).each(function(i,e){tagsHTML[e]="<span>"+e+"</span>"});
     tagsHTML[comm_func]="<b style=\"color:red\">"+comm_func+"</b>"
     var chart_config=build_chart(tagsHTML)
@@ -251,7 +251,7 @@ function showUnit(index)
     $("#result-wrapper").fadeIn();
     //1) Show communicative function
     $("#collapsable-example").html("")
-    showCommFunc(functional_unit['intent']['DA_tag'])
+    showCommFunc(functional_unit['intent']['DA_tag']['tag'])
     $("#qualifier_row").html("")
     //2) Show qualifiers
     qualifiers=(functional_unit["intent"])
