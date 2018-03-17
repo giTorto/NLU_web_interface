@@ -223,7 +223,7 @@ function showQualifier(key_value,q)
 
     console.log(q);
     if (key_value !== 'DA_tag') {
-        qualifier = qualifiers[key];
+        qualifier = qualifiers[key_value];
         qualifier["value"] = q.tag;
         qualifierDIV = $(build_qualifier(qualifier));
         $("#qualifier_row").append(qualifierDIV)
