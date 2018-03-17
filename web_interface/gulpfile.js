@@ -12,9 +12,7 @@ var webserver = require('gulp-webserver');
 var request = require('request');
 var plugins  = require('gulp-load-plugins')();
 var url = require('url');
-
-
-
+var path = require('path')
 
 
 // Set the banner content
