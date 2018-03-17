@@ -229,15 +229,17 @@ function showUnit(index)
 {
     console.log("showing unit");
     console.log(index);
-    console.log(current_units['utterances'][index])
+    console.log(current_units['utterances'][index]);
+
+    functional_unit = current_units['utterances'][index]
 
     $("#result-wrapper").fadeIn();
     //1) Show communicative function
     $("#collapsable-example").html("")
-    showCommFunc(current_units[index]['intent']['DA_tag'])
+    showCommFunc(functional_unit['intent']['DA_tag'])
     $("#qualifier_row").html("")
     //2) Show qualifiers
-    qualifiers=(current_units[index]["intent"])
+    qualifiers=(functional_unit["intent"])
     $(qualifiers).each(function(i,e){showQualifier(e);});
 }
 function showDetails(id){
