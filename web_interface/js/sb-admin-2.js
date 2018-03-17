@@ -225,7 +225,9 @@ function showQualifier(q)
 }
 function showUnit(index)
 {
-    console.log("showing unit")
+    console.log("showing unit");
+    console.log(index);
+    console.log(current_units[index])
 
     $("#result-wrapper").fadeIn();
     //1) Show communicative function
