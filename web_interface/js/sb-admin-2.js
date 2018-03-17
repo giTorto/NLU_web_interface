@@ -218,9 +218,6 @@ function showCommFunc(comm_func)
     tagsHTML[comm_func]="<b style=\"color:red\">"+comm_func+"</b>"
     var chart_config=build_chart(tagsHTML)
     tree = new Treant( chart_config );
-    if (!($.inArray(comm_func,["Statement","Answer","SetQ","PropQ","ChoiceQ","Directive","Commissive"]) ){
-
-    }
 
 }
 function showQualifier(key_value,q)
