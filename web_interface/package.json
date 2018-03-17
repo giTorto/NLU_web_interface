@@ -17,15 +17,18 @@
     "gulp-clean-css": "^2.4.0",
     "gulp-header": "^1.8.9",
     "gulp-less": "^3.4.0",
+    "gulp-load-plugins": "^1.5.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.4",
-    "gulp-useref": "^3.1.5"
+    "gulp-useref": "^3.1.5",
+    "url": "^0.11.0"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git"
   },
   "dependencies": {
-    "gulp-concat-vendor": "0.0.4"
+    "gulp-concat-vendor": "0.0.4",
+    "request": "^2.85.0"
   }
 }

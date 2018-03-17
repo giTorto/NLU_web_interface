@@ -9,6 +9,11 @@ var pkg = require('./package.json');
 var useref = require('gulp-useref');
 var bower = require('gulp-bower-files');
 var webserver = require('gulp-webserver');
+var request = require('request');
+var plugins  = require('gulp-load-plugins')();
+var url = require('url');
+
+
 
 
 
