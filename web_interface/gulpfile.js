@@ -54,7 +54,6 @@ gulp.task('js', function() {
 // Minify JS
 gulp.task('minify-js', ['js'], function() {
     return gulp.src('js/sb-admin-2.js')
-        .pipe(uglify())
         .pipe(header(banner, { pkg: pkg }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('dist/js'))
@@ -179,5 +178,5 @@ gulp.task('default', ['bower','copy','useref', 'less', 'minify-css', 'js', 'mini
 });
 
 
-gulp.task('dev', ['bower','copy','useref', 'less', 'minify-css', 'js', 'minify-js'], function() {
+gulp.task('dev', ['bower','copy','useref', 'less', 'minify-css', 'js','minify-js'], function() {
 });
