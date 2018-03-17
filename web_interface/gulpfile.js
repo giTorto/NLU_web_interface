@@ -12,7 +12,9 @@ var webserver = require('gulp-webserver');
 var request = require('request');
 var plugins  = require('gulp-load-plugins')();
 var url = require('url');
-var path = require('path')
+var path = require('path');
+var proxy = require('proxy-middleware');
+
 
 
 // Set the banner content
@@ -135,7 +137,12 @@ function sayHello(request, response) {
 }
 
 function mockApi(response, path_name, params, next) {
-    response.sendFile(path.join(__dirname + '/index.html'));
+    console.log(path_name);
+    console.log(params);
+    var options = url.parse('http://backend.api/api');
+    options.route = '/api';
+    return proxy(options);
+
 
 }
 
