@@ -234,12 +234,15 @@ function showQualifier(key_value,q)
 
     console.log(q);
     console.log(key_value);
-    if (key_value !== 'DA_tag' && key_value !== 'tense') {
+    if (key_value !== 'DA_tag' && key_value !== 'tense' && key_value !== 'functionality') {
         if (key_value === 'qtype') {
             key_value = 'factIT'
-        }else if (key_value === 'functionality'){
-            key_value = 'func'
-        }else if (key_value === 'IT_type'){
+        }
+        // for now ignore functionality since it is always continue
+        //else if (key_value === 'functionality'){
+        //    key_value = 'func'
+        //}
+        else if (key_value === 'IT_type'){
             key_value = 'subjIT'
         }
         var qualifier = '';
