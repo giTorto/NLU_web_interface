@@ -172,13 +172,13 @@ $(function() {
 current_units=[]
 
 function parseSentence(){
-    $.post("\"http://passidin10.science.unitn.it:5000/generate_USR",
+    $.post("http://passidin10.science.unitn.it:5000/generate_USR",
         {
             sentence: text,
             last_DAtag: "Greet"
         },
-        function(data, status){
-            alert("Data: " + data + "\nStatus: " + status);
+        function(data){
+            alert("Data: " + data );
         });
     $("#functionalUnits").fadeIn();
 }
@@ -242,11 +242,12 @@ $("#formParse").submit(function(e){
         last_DAtag: "Greet"
     },
         function(data){
-        current_units=data
-        colors=["#87CEEB","rgb(33, 133, 208)"]
+        alert("Data: " + data );
+        current_units=data;
+        colors=["#87CEEB","rgb(33, 133, 208)"];
         $(data).each(function(i,e){
             fUnit=$("<span style=\"padding:25px;font-size:150%\"><b style=\"color:"+colors[i%2]+"; cursor: pointer\" onclick=\"showUnit("+i+")\">"+e.unit+"</b></span> ");
-            $("#fUnits").append(fUnit)
+            $("#fUnits").append(fUnit);
             console.log(e.unit);
         });
     });
