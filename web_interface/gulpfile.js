@@ -145,8 +145,8 @@ function mockApi(response, path_name, params, next) {
             formData: {sentence: params['sentence'], last_DAtag: "Greet"}},
             function optionalCallback(err, httpResponse, body) {
                 console.log("returned something");
-                response['answer'] = body;
-                res.render(response)
+                //response['answer'] = body;
+                response.render(response)
         }
         );
     } else {
