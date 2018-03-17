@@ -177,3 +177,7 @@ gulp.task('webserver', function() {
 // Run everything
 gulp.task('default', ['bower','copy','useref', 'less', 'minify-css', 'js', 'minify-js','webserver'], function() {
 });
+
+
+gulp.task('dev', ['bower','copy','useref', 'less', 'minify-css', 'js', 'minify-js'], function() {
+});
