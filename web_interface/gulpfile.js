@@ -162,9 +162,6 @@ gulp.task('dev', ['bower','copy','useref', 'less', 'minify-css', 'js', 'minify-j
     gulp.watch('dist/css/*.css', ['minify-css']);
     gulp.watch('js/*.js', ['minify-js']);
     // Reloads the browser whenever HTML or JS files change
-    gulp.watch('dist/js/*.js', browserSync.reload);
-    gulp.watch('dist/vendor/**/*.js', browserSync.reload);
-    gulp.watch('dist/vendor/**/*.css', browserSync.reload);
 });
 
 
