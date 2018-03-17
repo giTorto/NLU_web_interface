@@ -179,6 +179,10 @@ current_units=[]
 
 function parseSentence(){
     console.log("Parse sentence has been called");
+    current_units = []
+    $("#fUnits").empty();
+    $("#qualifier_row").empty();
+    $("#result-wrapper").hide();
 
     $.getJSON(//"http://passidin10.science.unitn.it:5000/generate_USR",
         "http://sisl-nlu.disi.unitn.it/parse_USR"+'?'+'sentence='+$('#form_text_to_pass').val(),
@@ -209,7 +213,15 @@ function showDirective(){
 }
 function showCommFunc(comm_func)
 {
-    tagsHTML={}
+
+    if (comm_func === 'InfoQ') {
+        comm_func = "SetQ"
+    } else if (comm_func === 'Request') {
+        comm_func = 'Directive'
+    }else if (comm_func === 'Offer') {
+        comm_func = 'Commissive'
+    }
+    tagsHTML={};
     $(["Statement","Answer","SetQ","PropQ","ChoiceQ","Directive","Commissive"]).each(function(i,e){tagsHTML[e]="<span>"+e+"</span>"});
     tagsHTML[comm_func]="<b style=\"color:red\">"+comm_func+"</b>"
     var chart_config=build_chart(tagsHTML)
@@ -219,16 +231,28 @@ function showCommFunc(comm_func)
 function showQualifier(key_value,q)
 {
     console.log("showing qualifier");
-
-    qualifiers={};
+    var qualifiers = {};
     qualifiers["subjIT"]={id:"subjIT",panel:"panel-primary",icon:"fa-comments",type:"Subjective InfoType"};
     qualifiers["func"]={id:"func",panel:"panel-primary",icon:"fa-gears",type:"Functionality"};
     qualifiers["factIT"]={id:"factIT",panel:"panel-primary",icon:"fa-comment",type:"Factual InfoType"};
     qualifiers["sentiment"]={id:"sentiment",panel:"panel-primary",icon:"fa-smile-o",type:"Sentiment"};
 
     console.log(q);
-    if (key_value !== 'DA_tag') {
-        qualifier = qualifiers[key];
+    console.log(key_value);
+    if (key_value !== 'DA_tag' && key_value !== 'tense' && key_value !== 'functionality') {
+        if (key_value === 'qtype') {
+            key_value = 'factIT'
+        }
+        // for now ignore functionality since it is always continue
+        //else if (key_value === 'functionality'){
+        //    key_value = 'func'
+        //}
+        else if (key_value === 'IT_type'){
+            key_value = 'subjIT'
+        }
+        var qualifier = '';
+        var qualifierDIV = '';
+        qualifier = qualifiers[key_value];
         qualifier["value"] = q.tag;
         qualifierDIV = $(build_qualifier(qualifier));
         $("#qualifier_row").append(qualifierDIV)
@@ -247,11 +271,11 @@ function showUnit(index)
     $("#result-wrapper").fadeIn();
     //1) Show communicative function
     $("#collapsable-example").html("")
-    showCommFunc(functional_unit['intent']['DA_tag'])
+    showCommFunc(functional_unit['intent']['DA_tag']['tag'])
     $("#qualifier_row").html("")
     //2) Show qualifiers
     qualifiers=(functional_unit["intent"])
-    Object.keys(dictionary).forEach(function(key) {showQualifier(key,dictionary[key]);};
+    Object.keys(qualifiers).forEach(function(key) {showQualifier(key,qualifiers[key]);});
 }
 function showDetails(id){
     console.log(id)
