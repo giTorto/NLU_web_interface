@@ -127,6 +127,15 @@ gulp.task('useref', function(){
         .pipe(gulp.dest('dist'))
 });
 
+function sayHello(request, response) {
+    response.send("Hello!");
+}
+
+function mockApi(response, path_name, params, next) {
+    response.sendFile(path.join(__dirname + '/index.html'));
+
+}
+
 
 gulp.task('webserver', function() {
     gulp.src('dist')
@@ -135,7 +144,15 @@ gulp.task('webserver', function() {
             directoryListing: false,
             open: false,
             port: 3000,
-            fallback: 'index.html'
+            fallback: 'index.html',
+            middleware: function(req, res, next) {
+                var urlObj = url.parse(req.url, true),
+                    method = req.method,
+                    paramObj = urlObj.query;
+                console.log(req.url);
+                // Custom function to mock data
+                mockApi(res, urlObj.pathname, paramObj, next);
+            }
         }));
 });
 
