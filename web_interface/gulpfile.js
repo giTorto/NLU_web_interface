@@ -11,6 +11,9 @@ var bower = require('gulp-bower-files');
 var webserver = require('gulp-webserver');
 var request = require('request');
 var url = require('url');
+var path = require('path');
+var proxy = require('proxy-middleware');
+var express = require('express');
 
 
 
