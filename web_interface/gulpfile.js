@@ -148,8 +148,9 @@ gulp.task('webserver', function() {
     gulp.src('dist')
         .pipe(webserver({
             livereload: false,
-            directoryListing: true,
-            open: true
+            directoryListing: false,
+            open: false,
+            port:3000
         }));
 });
 
