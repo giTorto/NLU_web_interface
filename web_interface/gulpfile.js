@@ -131,7 +131,7 @@ gulp.task('useref', function(){
 gulp.task('webserver', function() {
     gulp.src('dist')
         .pipe(webserver({
-            livereload: false,
+            livereload: true,
             directoryListing: false,
             open: false,
             port: 3000,
