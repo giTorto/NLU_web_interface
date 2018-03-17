@@ -56,6 +56,7 @@ $(function() {
  */
 function build_qualifier(qualifier)
 {
+    console.log("building qualifier")
     return "<div class=\"col-lg-3 col-md-6 showable2\"><div class=\"panel "+qualifier.panel+" \"><div class=\"panel-heading\"><div class=\"row\"><div class=\"col-xs-3\"><i class=\"fa "+qualifier.icon+" fa-5x\"></i></div><div class=\"col-xs-9 text-right\"><div class=\"big\"><b>"+qualifier.type+"</b></div><div>"+qualifier.value+"</div></div></div></div><div class=\"panel-footer\"><span class=\"pull-left\" id="+qualifier.id+"onclick=\"showDetails(this.id)\" style=\"cursor: pointer\">View Details</span><span class=\"pull-right\"><i class=\"fa fa-arrow-circle-right\"></i></span><div class=\"clearfix\"></div></div></div></div>"
 
 }
@@ -207,6 +208,8 @@ function showCommFunc(comm_func)
 }
 function showQualifier(q)
 {
+    console.log("showing qulifier")
+
     qualifiers={}
     qualifiers["subjIT"]={id:"subjIT",panel:"panel-primary",icon:"fa-comments",type:"Subjective InfoType"}
     qualifiers["func"]={id:"func",panel:"panel-primary",icon:"fa-gears",type:"Functionality"}
@@ -219,6 +222,8 @@ function showQualifier(q)
 }
 function showUnit(index)
 {
+    console.log("showing unit")
+
     $("#result-wrapper").fadeIn();
     //1) Show communicative function
     $("#collapsable-example").html("")
