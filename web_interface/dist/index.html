@@ -6,11 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="descriptio  n" content="">
+    <meta name="description" content="">
     <meta name="author" content="">
 
     <title>NLU Processor</title>
-    <script src="js/sb-admin-2.js"></script>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -90,7 +89,7 @@
               <div class="form-group mx-sm-3 mb-2">
                 <input type="text" class="form-control" placeholder="Sentence To Parse">
               </div>
-              <button type="submit" onclick="parseSentence()" class="btn btn-primary mb-2">Parse</button>
+              <button type="button" onclick="parseSentence()" class="btn btn-primary mb-2">Parse</button>
             </form>
           </div>
              <div >
@@ -363,6 +362,7 @@
     <script src="../data/morris-data.js"></script>-->
 
     <!-- Custom Theme JavaScript -->
+    <script src="js/sb-admin-2.js"></script>
 
     <script>
     $(document).ready(function(){
@@ -373,7 +373,7 @@
     });
     $(document).on('click', 'a[href^="#"]', function (event) {
     event.preventDefault();
-    console.log("Sti cazzi")
+
     $('html, body').animate({
         scrollTop: $($.attr(this, 'href')).offset().top
     }, 1000);
