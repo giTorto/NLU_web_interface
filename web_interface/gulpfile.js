@@ -146,7 +146,7 @@ function mockApi(response, path_name, params, next) {
             function optionalCallback(err, httpResponse, body) {
                 console.log("returned something");
                 //response['answer'] = body;
-                response.render(response)
+                //response.render(response)
         }
         );
     } else {
