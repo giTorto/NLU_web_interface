@@ -224,6 +224,13 @@ function showQualifier(key_value,q)
     console.log(q);
     console.log(key_value);
     if (key_value !== 'DA_tag') {
+        if (key_value === 'qtype') {
+            key_value = 'factIT'
+        }else if (key_value === 'functionality'){
+            key_value = 'func'
+        }else if (key_value === 'IT_type'){
+            key_value = 'subjIT'
+        }
         qualifier = qualifiers[key_value];
         qualifier["value"] = q.tag;
         qualifierDIV = $(build_qualifier(qualifier));
