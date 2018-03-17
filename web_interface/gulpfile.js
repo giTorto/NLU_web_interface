@@ -61,15 +61,15 @@ gulp.task('minify-js', ['js'], function() {
         .pipe(header(banner, { pkg: pkg }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('dist/js'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
 });
 
 gulp.task('bower', function() {
     return bower({ directory: './vendor' })
 });
 
+//        .pipe(browserSync.reload({
+//stream: true
+//}))
 
 
 // Copy vendor libraries from /bower_components into /vendor
@@ -128,14 +128,6 @@ gulp.task('browserSync', function() {
     })
 });
 
-gulp.task('browserSync', function() {
-    browserSync.init({
-        server: {
-            baseDir: 'dist'
-        },
-        browser: 'google chrome'
-    })
-})
 
 gulp.task('useref', function(){
     return gulp.src('pages/*.html')
