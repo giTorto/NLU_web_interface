@@ -205,7 +205,7 @@ function showDirective(){
 function showCommFunc(comm_func)
 {
     tagsHTML={};
-    $(["Statement","Answer","SetQ","PropQ","ChoiceQ","Directive","Commissive"]).each(function(i,e){tagsHTML[e]="<span>"+e+"</span>"});
+    $(["Statement","Answer","InfoQ","PropQ","ChoiceQ","Request","Offer"]).each(function(i,e){tagsHTML[e]="<span>"+e+"</span>"});
     tagsHTML[comm_func]="<b style=\"color:red\">"+comm_func+"</b>"
     var chart_config=build_chart(tagsHTML)
     tree = new Treant( chart_config );
