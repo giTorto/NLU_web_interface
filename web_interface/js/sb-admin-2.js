@@ -181,6 +181,7 @@ function parseSentence(){
             console.log(data);
             //alert("Data: " + data );
             //$("#functionalUnits").fadeIn();
+            colors=["#87CEEB","rgb(33, 133, 208)"];
             $(data).each(function(i,e){
                 fUnit=$("<span style=\"padding:25px;font-size:150%\"><b style=\"color:"+colors[i%2]+"; cursor: pointer\" onclick=\"showUnit("+i+")\">"+e.unit+"</b></span> ");
                 $("#fUnits").append(fUnit);
