@@ -258,5 +258,4 @@ $("#formParse").submit(function(e){
             console.log(e.unit);
         });
     });
-    return false;
 });
