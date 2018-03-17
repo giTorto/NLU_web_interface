@@ -27,9 +27,7 @@ gulp.task('less', function() {
         .pipe(less())
         .pipe(header(banner, { pkg: pkg }))
         .pipe(gulp.dest('dist/css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+
 });
 
 // Minify compiled CSS
@@ -38,9 +36,6 @@ gulp.task('minify-css', ['less'], function() {
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('dist/css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
 });
 
 // Copy JS to dist
@@ -48,9 +43,6 @@ gulp.task('js', function() {
     return gulp.src(['js/sb-admin-2.js','bower_components/raphael/raphael.js', 'bower_components/raphael/raphael.min.js'])
         .pipe(header(banner, { pkg: pkg }))
         .pipe(gulp.dest('dist/js'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
 });
 
 
