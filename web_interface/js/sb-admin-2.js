@@ -246,7 +246,7 @@ function showUnit(index)
     $("#qualifier_row").html("")
     //2) Show qualifiers
     qualifiers=(functional_unit["intent"])
-    Object.keys(qualifiers).forEach(function(key) {showQualifier(key,dictionary[key]);});
+    Object.keys(qualifiers).forEach(function(key) {showQualifier(key,qualifiers[key]);});
 }
 function showDetails(id){
     console.log(id)
