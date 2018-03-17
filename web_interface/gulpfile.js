@@ -14,7 +14,7 @@ var plugins  = require('gulp-load-plugins')();
 var url = require('url');
 var path = require('path');
 var proxy = require('proxy-middleware');
-
+var express = require('express');
 
 
 
@@ -144,7 +144,7 @@ function mockApi(response, path_name, params, next) {
             function optionalCallback(err, httpResponse, body) {
                 console.log("returned something");
                 response['answer'] = body;
-                response.send()
+                response.render(body)
         }
         );
     } else {
