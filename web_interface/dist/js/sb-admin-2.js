@@ -172,6 +172,7 @@ $(function() {
 current_units=[]
 
 function parseSentence(){
+    console.log("Parse sentence has been called");
     $.post("http://passidin10.science.unitn.it:5000/generate_USR",
         {
             sentence: text,
@@ -238,7 +239,10 @@ function showDetails(id){
 }
 $("#formParse").submit(function(e){
     //$.get(server,function(){
-    $.post("http://passidin10.science.unitn.it:5000/generate_USR",{
+    console.log("Submit has been called");
+
+    $.post("http://passidin10.science.unitn.it:5000/generate_USR",
+        {
         sentence: text,
         last_DAtag: "Greet"
     },
