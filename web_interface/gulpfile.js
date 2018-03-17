@@ -8,6 +8,8 @@ var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
 var useref = require('gulp-useref');
 var bower = require('gulp-bower-files');
+var webserver = require('gulp-webserver');
+
 
 
 // Set the banner content
@@ -142,6 +144,15 @@ gulp.task('useref', function(){
 });
 
 
+gulp.task('webserver', function() {
+    gulp.src('dist')
+        .pipe(webserver({
+            livereload: false,
+            directoryListing: true,
+            open: true
+        }));
+});
+
 
 // Dev task with browserSync
 gulp.task('dev', ['bower','copy','useref', 'less', 'minify-css', 'js', 'minify-js','browserSync'], function() {
@@ -157,4 +168,13 @@ gulp.task('dev', ['bower','copy','useref', 'less', 'minify-css', 'js', 'minify-j
 
 
 // Run everything
-gulp.task('default', ['browserSync', 'less', 'minify-css', 'js', 'minify-js']);
+gulp.task('default', ['bower','copy','useref', 'less', 'minify-css', 'js', 'minify-js','webserver'], function() {
+    gulp.watch('less/*.less', ['less']);
+    gulp.watch('dist/css/*.css', ['minify-css']);
+    gulp.watch('js/*.js', ['minify-js']);
+    // Reloads the browser whenever HTML or JS files change
+    gulp.watch('dist/*.html', browserSync.reload);
+    gulp.watch('dist/js/*.js', browserSync.reload);
+    gulp.watch('dist/vendor/**/*.js', browserSync.reload);
+    gulp.watch('dist/vendor/**/*.css', browserSync.reload);
+});
