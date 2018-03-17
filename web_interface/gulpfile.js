@@ -11,9 +11,6 @@ var bower = require('gulp-bower-files');
 var webserver = require('gulp-webserver');
 var request = require('request');
 var url = require('url');
-var path = require('path');
-var proxy = require('proxy-middleware');
-var express = require('express');
 
 
 
@@ -54,6 +51,7 @@ gulp.task('js', function() {
 // Minify JS
 gulp.task('minify-js', ['js'], function() {
     return gulp.src('js/sb-admin-2.js')
+        .pipe(uglify())
         .pipe(header(banner, { pkg: pkg }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('dist/js'))
